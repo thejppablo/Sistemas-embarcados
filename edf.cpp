@@ -76,23 +76,29 @@ void edf(int processos[][4], int qnt){
     printar_array(periodos,qnt);
 
     int * contador = arr_dinamico(qnt);
-/*
+
     while (relogio < 20){
         int escolhido = escolher_melhor_deadline(qnt,deadlines);
-        cout << "Processo escolhido: " << escolhido;
+        cout << "Processo escolhido: " << escolhido << endl;
         if(periodos[escolhido] >= relogio){
             relogio = relogio + processos[escolhido][1];
-            cout << "Processo: P" << escolhido << "executando... \n";
+            cout << "Processo: P" << escolhido << " executando... \n";
             cout << "Relogio: "<<relogio << endl;
-            cout << "Burst Time do Processo P" << escolhido << ": processos[escolhido][1] \n";
+            cout << "Burst Time do Processo P" << escolhido << ": " << processos[escolhido][1] << endl;
             cout << "Deadline ANTERIOR do Processo : " << deadlines[escolhido] << endl;
             deadlines[escolhido] = deadlines[escolhido] + processos[escolhido][3];
-            cout << "Deadline do Processo P" << escolhido << "Atualizada: " << deadlines[escolhido] << endl;
+            cout << "Deadline do Processo P" << escolhido << " Atualizada: " << deadlines[escolhido] << endl;
             cout << "Periodo ANTERIOR do Processo: " << periodos[escolhido] << endl;
-
+            periodos[escolhido] = periodos[escolhido] + processos[escolhido][3];
+            cout << "Periodo do Processo P" << escolhido << " Atualizado: " << periodos[escolhido] << endl;
+            contador[escolhido] = contador[escolhido] + 1;
         }
 
-    }*/
+    }
+
+    for(int i = 0; i<qnt; i++){
+        cout << "O Processo P" << i << " Executou " << contador[i] << " vezes \n";
+    }
 
 
 
